@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HeaderComponent from "./HeaderComponent.jsx";
-import FooterComponent from "./FooterComponent";
+import HeaderComponent from "./bars/HeaderComponent.jsx";
+import FooterComponent from "./bars/FooterComponent";
 import UserManagementPage from "./UserManagementPage";
 import UserService from "../api/UserService";
+import Example from "./Example.jsx";
 
 export default class Main extends Component {
   render() {
     //UserService.setupAxiosInterceptors()
     return (
-      <div className="d-flex w-100 h-100 mx-auto flex-column justify-content-center">
+      <div>
         <Router>
           <>
           <HeaderComponent />

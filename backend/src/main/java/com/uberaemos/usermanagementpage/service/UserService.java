@@ -1,7 +1,5 @@
 package com.uberaemos.usermanagementpage.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,5 +20,15 @@ public class UserService {
 		int maxPages = users.getTotalPages();
 		UserResponse response = new UserResponse(users.getContent(), maxPages, pageNumber);
 		return response;
+	}
+
+	public UserResponse deleteUser(String userId, int pageNumber) {
+		repository.deleteById(userId);
+		return getAll(pageNumber);
+	}
+
+	public UserResponse saveUser(User user) {
+		repository.save(user);
+		return getAll(0);
 	}
 }

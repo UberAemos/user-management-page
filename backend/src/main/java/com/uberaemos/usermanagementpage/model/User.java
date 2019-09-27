@@ -8,6 +8,9 @@ public class User {
 	@Id String id;
 	String name, surname, phone;
 	
+	
+	public User() {	}
+
 	public User(String name, String surname, String phone) {
 		this.name = name;
 		this.surname = surname;
